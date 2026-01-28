@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <>
       <Wrapper>
-        <footer className="footer sm:footer-horizontal bg-black/10 text-white p-10">
+        <footer className="footer sm:footer-horizontal bg-[#171f2c] text-white p-10">
           <nav>
             <h6 className="footer-title">Services</h6>
             <a className="link link-hover">Branding</a>
@@ -27,7 +27,7 @@ const Footer = () => {
             <a className="link link-hover">Cookie policy</a>
           </nav>
         </footer>
-        <footer className="footer bg-black/10 text-white border-base-300 border-t px-10 py-4">
+        <footer className="footer bg-[#171f2c] text-white border-base-300 border-t px-10 py-4">
           <aside className="grid-flow-col items-center">
             <svg
               width="24"

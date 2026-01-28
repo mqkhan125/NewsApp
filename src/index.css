@@ -2,7 +2,7 @@
 @plugin "daisyui";
 
 body{
-    background-color: rgb(46, 45, 45);
+        background-color: #0e131b;
 }
 
 .scroll-none {
