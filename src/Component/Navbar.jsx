@@ -10,14 +10,15 @@ const Navbar = ({className}) => {
     console.log(searchValue)
     
     useEffect(() => {
-      (async () => {
+      const delay = setTimeout(async () => {
         if (!searchValue.trim()) return;
 
         const data = await fetchData(`/everything?q=${searchValue}`);
         setNews(data.articles);
+      }, 500); //  debounce (500ms)
 
+      return () => clearTimeout(delay);
     }, [searchValue]);
-    })
 
   return (
     <div className={` ${className} bg-[#171f2c] text-white`}>
