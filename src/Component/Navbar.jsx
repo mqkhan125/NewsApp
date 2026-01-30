@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Wrapper from './Wrapper';
+import { useNewsContext } from '../ContextApi/NewsContext';
 
 const Navbar = ({className}) => {
+
+  const {setNews, fetchData} = useNewsContext()
+
+  const [searchValue, setSearchValue] = useState('')
+    console.log(searchValue)
+    
+    useEffect(() => {
+      (async () => {
+        if (!searchValue.trim()) return;
+
+        const data = await fetchData(`/everything?q=${searchValue}`);
+        setNews(data.articles);
+
+    }, [searchValue]);
+    })
+
   return (
     <div className={` ${className} bg-[#171f2c] text-white`}>
       <Wrapper>
@@ -14,7 +31,9 @@ const Navbar = ({className}) => {
               type="text"
               placeholder="Search"
               className="input input-bordered w-24 md:w-auto bg-black border-none outline-none"
-            />
+              value={searchValue}
+              onChange={(e) => setSearchValue(e.target.value)}
+           />
 
             <button className="btn btn-ghost btn-circle">
               <div className="indicator">
