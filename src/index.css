@@ -1,8 +1,21 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+/* ✅ REQUIRED for line-clamp in Tailwind v4 */
+@utility line-clamp {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
 body{
         background-color: #0e131b;
+}
+
+
+.card-body {
+  display: flex;
+  flex-direction: column;
 }
 
 .scroll-none {

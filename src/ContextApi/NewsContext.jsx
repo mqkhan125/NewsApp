@@ -8,7 +8,7 @@ export const NewsContextProvider = ({children}) => {
     const [news , setNews] = useState([])
 
 
-    const fetchData = async (url = "/everything?q=tesla") => {
+    const fetchData = async (url = "/everything?q=india") => {
        try {
         const res = await api.get(
           `${url}&sortBy=publishedAt&apiKey=${import.meta.env.VITE_API_KEY}`,
